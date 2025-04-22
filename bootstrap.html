@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        #parent{
+           display: grid;
+           padding: 20px;
+           margin: 20px;
+           width: 600px;
+           grid-template-columns: repeat(4,1fr);
+           gap:10px
+        
+        }
+
+        .btn{
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .btn-equals{
+            background-color: orange;
+            color: white;
+            grid-row: 2 / 5;
+            grid-column: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* padding-top: 20px;
+            padding-left: 40px; */
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- flex     -->
+
+    <div id="parent">
+
+        <div class="btn">1</div>
+        <div class="btn">2</div>
+        <div class="btn">3</div>
+        <div class="btn">4</div>
+        <div class="btn">5</div>
+        <div class="btn">6</div>
+        <div class="btn">7</div>
+        <div class="btn">8</div>
+        <div class="btn">9</div>
+        <div class="btn">0</div>
+        <div class="btn">7</div>
+        <div class="btn">8</div>
+        <div class="btn">9</div>
+        <div class="btn">0</div>
+        <div class="btn btn-equals">=</div>
+
+        
+
+
+      
+
+    </div>
+
+    <a href="/notepad.html">link notepad</a>
+    
+</body>
+</html>
