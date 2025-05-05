@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>this is js class</p>
+
+
+
+    <script>
+
+
+        console.log("js is running")
+
+
+
+        // how to access in obj
+
+
+        var person = {
+
+            name: 'sadhik',
+            gender: 'male',
+            year: 2025
+
+        }
+
+
+
+
+
+        // first method using square brackets
+        console.log(person["name"], "person")
+        console.log(person["gender"], "person")
+
+        // second method is using dot operator
+
+        console.log(person.name,"accessing name using dot oper")
+
+
+        // syntax is ["we will give the key"]
+
+
+        const grpOfPersons = [
+            {
+
+                name: 'sadhik',
+                gender: 'male',
+                year: 2025
+
+            },
+            {
+
+                name: 'sarauv',
+                gender: 'male',
+                year: 2025
+
+            }
+
+        ]
+
+
+
+        // 
+
+        console.log(grpOfPersons[1].name,"second person name")
+
+
+        console.log(grpOfPersons[1]["name"],"second person sqbr")
+
+
+        console.log()
+
+        const grpOfNumbers = [11,12,13,14]
+
+
+
+        // array ---- [1] -----
+
+        console.log(grpOfNumbers[3],"this is 3 index")
+
+        console.log(grpOfNumbers)
+
+
+        // function ----- action
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
