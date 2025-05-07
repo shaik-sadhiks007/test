@@ -36,12 +36,12 @@
 
 
         // first method using square brackets
-        console.log(person["name"], "person")
-        console.log(person["gender"], "person")
+        // console.log(person["name"], "person")
+        // console.log(person["gender"], "person")
 
         // second method is using dot operator
 
-        console.log(person.name,"accessing name using dot oper")
+        // console.log(person.name,"accessing name using dot oper")
 
 
         // syntax is ["we will give the key"]
@@ -69,29 +69,163 @@
 
         // 
 
-        console.log(grpOfPersons[1].name,"second person name")
+        // console.log(grpOfPersons[1].name,"second person name")
 
 
-        console.log(grpOfPersons[1]["name"],"second person sqbr")
+        // console.log(grpOfPersons[1]["name"],"second person sqbr")
 
 
-        console.log()
 
-        const grpOfNumbers = [11,12,13,14]
+        const grpOfNumbers = [11, 12, 13, 14]
 
 
 
         // array ---- [1] -----
 
-        console.log(grpOfNumbers[3],"this is 3 index")
+        // console.log(grpOfNumbers[3],"this is 3 index")
 
-        console.log(grpOfNumbers)
+        // console.log(grpOfNumbers)
 
 
         // function ----- action
 
 
+        // function is a block of code used to perform a task when it was called,
 
+
+        // syntax :
+
+        // function fun_Name() {
+
+        // }
+
+
+        // car(); // hoisting
+
+
+        // a,b are called as parameters or arguments
+
+        function car(a, b) {
+
+            console.log("car is moving")
+
+
+            let c = a + b;
+
+            // 1+2+undefined === not a numver -- nan
+
+            // console.log(d,'d')
+
+            console.log("sum of two numbers is ", c);
+
+            return c
+
+
+        } // function declaration
+
+
+
+        // car(11,14) // fun call
+
+
+        let a;
+
+        console.log(a, "a")
+
+        // car(1,2) // here we are getting NAN ---- not an number
+
+        // car(3,5)
+
+        // car(9,0)
+
+
+        const result = car(11, 12) // c as o/p 23
+
+        console.log(result, "result is")
+
+
+
+
+        // lets see the types of 
+
+        // 1. named function
+        // 2. anynomous function
+        // 3. arrow function
+        // 4. callback function
+
+
+        // operations 
+
+        // 1. arthmetic operations -,+,*,/,%
+
+
+        // what is diff b.w / and %
+
+
+        // let d = 5 % 2
+
+
+        // console.log("d output", d)
+
+
+        console.log(1 + 2 + "sadhik")
+
+
+        // let a = 'sadhik'
+
+        let b = 'shaik'
+
+        let c = a + b; // cancatenation --- joining of two strings
+
+        console.log(c)
+
+        console.log(1 + 2 + "sadhik")
+
+
+        let d = '3'
+
+        console.log(typeof (d))
+
+        console.log(3 + "3") // 3sadhik 
+
+        console.log('3' + '3')
+
+
+        // --- BODMAS rule 
+
+        // console.log(89 - '90' / 2);
+
+
+        //  console.log('78' - 90 + '2'); // data type
+
+        //  -12 number + '2' string ----> -122 ---- string
+
+
+
+
+
+
+        // hoisting ---- all the declarations will be on the top
+
+        var x ;
+       
+        console.log(x,"x before")
+
+        var x = 5;
+
+        console.log(x,"x after")
+
+
+        // console.log(y)
+
+        // let y = 5;
+
+        // console.log(z)
+
+        // const z = 5;
+
+
+        
 
 
 
