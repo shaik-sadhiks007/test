@@ -5,9 +5,36 @@
 
 let str1 = "sadhik";
 
-// properties and functions(methods)
+
+// character (single letter) and string (grp of characters)
+
+// properties and functions(methods)(actions)  ----- car 
+
+
+console.log(str1.length,'length') 
+
+console.log(str1.toUpperCase())
+
+console.log(str1.charAt(1),'character')
+
+console.log(str1.slice(0,3),"splitting")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let c = a + 3 ; // imaginary numbers
+
 
 
 let z ; // undefined
@@ -16,7 +43,7 @@ let z ; // undefined
 console.log(c,"c output")
 
 
-let a = 5;
+var a = 5;
 
 
 let d = a + 3;
