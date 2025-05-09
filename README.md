@@ -12,7 +12,6 @@ A handy reference for important methods and properties in JavaScript.
 | `charAt()` | Returns character at index | `"hello".charAt(1) // 'e'` |
 | `slice(start, end)` | Extracts part of string | `"hello".slice(1, 4) // 'ell'` |
 | `substring(start, end)` | Similar to slice | `"hello".substring(1, 4) // 'ell'` |
-| `substr(start, length)` | Deprecated, but works | `"hello".substr(1, 3) // 'ell'` |
 | `toUpperCase()` | Converts to upper case | `"hello".toUpperCase() // 'HELLO'` |
 | `toLowerCase()` | Converts to lower case | `"HELLO".toLowerCase() // 'hello'` |
 | `includes()` | Checks if string includes substring | `"hello".includes("ell") // true` |
@@ -33,11 +32,6 @@ A handy reference for important methods and properties in JavaScript.
 | `shift()` | Remove from start | `arr.shift()` |
 | `unshift()` | Add to start | `arr.unshift(0)` |
 | `length` | Number of elements | `arr.length` |
-| `map()` | Transform items | `[1,2].map(x => x*2) // [2,4]` |
-| `filter()` | Filter by condition | `[1,2,3].filter(x => x>1) // [2,3]` |
-| `reduce()` | Accumulate values | `[1,2,3].reduce((a,b) => a+b, 0) // 6` |
-| `find()` | First matching item | `[1,2,3].find(x => x > 1) // 2` |
-| `findIndex()` | Index of match | `[1,2,3].findIndex(x => x>1) // 1` |
 | `includes()` | Check for value | `[1,2,3].includes(2) // true` |
 | `indexOf()` | Index of value | `[1,2,3].indexOf(2) // 1` |
 | `concat()` | Merge arrays | `[1].concat([2]) // [1,2]` |
@@ -54,11 +48,6 @@ A handy reference for important methods and properties in JavaScript.
 | `Object.keys()` | Array of keys | `Object.keys({a:1, b:2}) // ['a','b']` |
 | `Object.values()` | Array of values | `Object.values({a:1, b:2}) // [1,2]` |
 | `Object.entries()` | Array of key-value pairs | `Object.entries({a:1}) // [['a',1]]` |
-| `Object.assign()` | Copy/merge objects | `Object.assign({}, obj1, obj2)` |
-| `hasOwnProperty()` | Check key existence | `obj.hasOwnProperty("a")` |
-| `delete` | Remove a key | `delete obj.key` |
-| `in` keyword | Key check | `"a" in obj // true` |
-
 ---
 
 ## 🔢 Number Methods/Properties
