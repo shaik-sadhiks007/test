@@ -5,6 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        /* #box1{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -17,6 +41,32 @@
     <!-- <div>this is created by js</div> -->
 
 
+    <div>
+
+        <div>
+
+            child 1
+
+        </div>
+
+        <div>
+
+            child 2
+        </div>
+
+
+        <!-- <div id="box1">
+
+            <span>
+                box 1
+            </span>
+        </div> -->
+
+
+
+    </div>
+
+
 
 
     <script>
@@ -24,18 +74,56 @@
 
         // to create a element (node) we have createElement() function
 
-        const newDiv = document.createElement('div');
+        // const newDiv = document.createElement('div'); // <div> </div>
 
-        newDiv.textContent = "this is created by js"
+        // newDiv.textContent = "this is created by js" // u can add the text in ur element
 
-        document.body.appendChild(newDiv)
-
-
+        // document.body.appendChild(newDiv)
 
 
-        console.log(newDiv,'newdiv')
+        // console.log(newDiv,'newdiv')
 
-        
+
+
+        const boxDiv = document.createElement('div');
+
+        boxDiv.id = 'box2'
+
+        // boxDiv.textContent = 'this is text content'
+
+        boxDiv.innerHTML = '<span> box 1 </span>'
+
+
+        // boxDiv.style.backgroundColor = 'brown';
+        // boxDiv.style.width = '100px';
+        // boxDiv.style.height = '100px';
+        // boxDiv.style.color = 'white';
+
+
+        // boxDiv.style.display = 'flex';
+        // boxDiv.style.justifyContent = 'center';
+        // boxDiv.style.alignItems = 'center'
+
+
+
+
+        // const boxSpan = document.createElement('div');
+
+        // boxSpan.textContent = 'box 1';
+
+        // boxDiv.appendChild(boxSpan)
+
+        // boxDiv.appendChild(boxSpan);
+
+        document.body.appendChild(boxDiv);
+
+
+
+
+
+        console.log(boxDiv, "boxdiv")
+        // console.log(boxSpan, 'boxspan')
+
 
 
 
