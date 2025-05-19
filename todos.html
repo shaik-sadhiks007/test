@@ -20,7 +20,7 @@
         <div class="d-flex ">
             <input type="text" class="" id="todo-input" placeholder="enter the title">
 
-            <button class="btn btn-primary ms-3" onclick="renderTodos()"> Add </button>
+            <button class="btn btn-primary ms-3" onclick="addTodos()"> Add </button>
         </div>
 
         <ul class="mt-3" id="todoContainer">
@@ -50,6 +50,13 @@
 
         const input = document.getElementById('todo-input');
 
+        // state-management ---- how the data is storing
+
+
+        // json to javascript obj we r using json.parse
+
+        const todosData = JSON.parse(localStorage.getItem("todos") || [] )
+
         // function KeyDownFun() {
 
         //     console.log(input.value, "text content")
@@ -58,23 +65,84 @@
 
         function renderTodos() {
 
-            const liTag = document.createElement('li');
+            ulTag.innerHTML = ''
 
-            liTag.innerHTML = `
+            todosData.forEach(element => {
 
-             <input type="checkbox">
+                const liTag = document.createElement('li');
 
-                <span>${input.value}</span>
+                liTag.innerHTML = `
+
+                <input type="checkbox">
+
+                <span>${element.todo}</span>
 
                 <button class="btn btn-warning">Edit</button>
 
                 <button class="btn btn-danger">Delete</button>
             
             `
-            ulTag.appendChild(liTag);
+                ulTag.appendChild(liTag);
+
+
+            console.log(element.todo,"todoelement")
+
+
+            });
+
 
         }
 
+
+        function addTodos() {
+
+
+            console.log(Date.now(),"time now")
+            todosData.push(
+
+            {
+                id : Date.now(),
+                todo : input.value,
+                completed : false
+
+
+            })
+
+
+            addToLocalStorage()
+
+
+            renderTodos()
+
+            console.log(todosData,"todosdata")
+
+
+        }
+
+
+
+        // to add the data in localstorage
+
+        // json ---- js object notation
+
+        // json --- it is not limited to js --- it is universal, js, python , java
+
+
+        // javascript obj --- key doesnot have in quotation
+
+        // json ---- keys have the double quotes or single quotes
+
+
+        //json { "key" : "value"  }
+
+        function addToLocalStorage() {
+            localStorage.setItem('todos', JSON.stringify(todosData))
+        }
+
+
+
+
+        renderTodos()
 
         console.log(input, "input")
 
