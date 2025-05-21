@@ -55,7 +55,9 @@
 
         // json to javascript obj we r using json.parse
 
-        const todosData = JSON.parse(localStorage.getItem("todos") || [] )
+        // in json keys also have the quotes
+
+        let todosData = JSON.parse(localStorage.getItem("todos")) || [] 
 
         // function KeyDownFun() {
 
@@ -63,23 +65,30 @@
         // }
 
 
+        // const arr = [
+
+
+        // {}, {}
+        // ]
+
+
         function renderTodos() {
 
             ulTag.innerHTML = ''
 
-            todosData.forEach(element => {
+            todosData.forEach((element,index) => {
 
                 const liTag = document.createElement('li');
 
                 liTag.innerHTML = `
 
-                <input type="checkbox">
+                <input type="checkbox" ${element.completed ? "checked" : "" } >
 
-                <span>${element.todo}</span>
+                <span class=" ${element.completed ? "text-decoration-line-through" : "" }   ">${element.todo}</span>
 
                 <button class="btn btn-warning">Edit</button>
 
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger" onclick="deleteTodo(${index})">Delete</button>
             
             `
                 ulTag.appendChild(liTag);
@@ -91,20 +100,56 @@
             });
 
 
+
         }
+
+
+        
+
+
+        // if(element.completed){
+
+
+        //     checked
+
+
+        // } else {
+
+        // }
+
+
+        // const age = 19
+
+        // if(age > 18 ) {
+        //     console.log(true) 
+        // } else {
+        //     console.log(false)
+        // }
+
+
+        // ternary ----- (condition) ? if block : else block
+
+
+        // let isMajorPerson = (age > 18) ? true : false
+
+        // console.log(isMajorPerson,"is major")
+
 
 
         function addTodos() {
 
+            if(input.value.trim() == '') {
+
+                return ;
+            }
+
 
             console.log(Date.now(),"time now")
             todosData.push(
-
             {
                 id : Date.now(),
                 todo : input.value,
-                completed : false
-
+                completed : true
 
             })
 
@@ -113,6 +158,10 @@
 
 
             renderTodos()
+
+            input.value = '';
+
+        
 
             console.log(todosData,"todosdata")
 
@@ -139,6 +188,31 @@
             localStorage.setItem('todos', JSON.stringify(todosData))
         }
 
+
+        function deleteTodo(index) {
+
+            console.log(index,'in the delete todo');
+
+
+            let newTodo = todosData.filter((ele, i) => i !== index);
+
+
+            console.log(newTodo,"newTodo")
+
+            // 1 method --- using splice
+
+            // todosData.splice(index,1);
+
+            // 2 method -- using filter
+
+            todosData = newTodo;
+
+            renderTodos()
+
+            addToLocalStorage()
+
+            console.log(todosData,"todosData")
+        }
 
 
 
