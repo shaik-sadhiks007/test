@@ -57,7 +57,10 @@
 
         // in json keys also have the quotes
 
-        let todosData = JSON.parse(localStorage.getItem("todos")) || [] 
+        let todosData = JSON.parse(localStorage.getItem("todos")) || []
+
+
+        // todo = []
 
         // function KeyDownFun() {
 
@@ -72,21 +75,24 @@
         // ]
 
 
+        // syntax ---- (condition) ? if : else
+
+
         function renderTodos() {
 
             ulTag.innerHTML = ''
 
-            todosData.forEach((element,index) => {
+            todosData.forEach((element, index) => {
 
                 const liTag = document.createElement('li');
 
                 liTag.innerHTML = `
 
-                <input type="checkbox" ${element.completed ? "checked" : "" } >
+                <input type="checkbox" ${element.completed ? "checked" : ""} onchange="toggleinput(${index})" >
 
-                <span class=" ${element.completed ? "text-decoration-line-through" : "" }   ">${element.todo}</span>
+                <span class=" ${element.completed ? "text-decoration-line-through" : ""}   ">${element.todo}</span>
 
-                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-warning" onclick="editTodo(${index})">Edit</button>
 
                 <button class="btn btn-danger" onclick="deleteTodo(${index})">Delete</button>
             
@@ -94,7 +100,7 @@
                 ulTag.appendChild(liTag);
 
 
-            console.log(element.todo,"todoelement")
+                console.log(element.todo, "todoelement")
 
 
             });
@@ -104,7 +110,10 @@
         }
 
 
-        
+        console.log(todosData, 'todosdata')
+
+
+
 
 
         // if(element.completed){
@@ -138,20 +147,20 @@
 
         function addTodos() {
 
-            if(input.value.trim() == '') {
+            if (input.value.trim() == '') {
 
-                return ;
+                return;
             }
 
 
-            console.log(Date.now(),"time now")
+            console.log(Date.now(), "time now")
             todosData.push(
-            {
-                id : Date.now(),
-                todo : input.value,
-                completed : true
+                {
+                    id: Date.now(),
+                    todo: input.value,
+                    completed: true
 
-            })
+                })
 
 
             addToLocalStorage()
@@ -161,9 +170,9 @@
 
             input.value = '';
 
-        
 
-            console.log(todosData,"todosdata")
+
+            console.log(todosData, "todosdata")
 
 
         }
@@ -191,13 +200,13 @@
 
         function deleteTodo(index) {
 
-            console.log(index,'in the delete todo');
+            console.log(index, 'in the delete todo');
 
 
             let newTodo = todosData.filter((ele, i) => i !== index);
 
 
-            console.log(newTodo,"newTodo")
+            console.log(newTodo, "newTodo")
 
             // 1 method --- using splice
 
@@ -211,9 +220,55 @@
 
             addToLocalStorage()
 
-            console.log(todosData,"todosData")
+            console.log(todosData, "todosData")
         }
 
+
+
+
+        // example how to change the value in obj
+        // const obj = {
+        //     completed: true
+        // }
+
+
+
+        // obj.completed = false
+
+        // console.log(obj.completed);
+
+
+        function toggleinput(position) {
+
+            console.log(position, 'pos')
+
+            todosData[position].completed = !todosData[position].completed
+
+
+            renderTodos()
+
+            addToLocalStorage()
+
+            console.log(todosData[position], 'clicked todo')
+
+        }
+
+
+        function editTodo(position) {
+
+            console.log(todosData[position],'edit button clicked')
+
+            const newTodo = prompt("Edit your todo : ",todosData[position].todo);
+
+            todosData[position].todo = newTodo;
+
+            renderTodos()
+
+            addToLocalStorage()
+
+
+
+        }
 
 
         renderTodos()
