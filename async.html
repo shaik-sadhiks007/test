@@ -91,7 +91,9 @@
         async function f2() {
 
 
-            const response = await fetch('https://dummyjson.com/todos');
+            const response = await fetch('https://dummyjson.com/todos'); // get the data from the backend 
+            // 
+            // after getting the data it is in the promise (data in the binary format)
 
             const data = await response.json()
 
