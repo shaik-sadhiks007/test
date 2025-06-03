@@ -1,0 +1,62 @@
+to start react js -----
+
+
+node js ---- is compiler of js --- to run js outside the browser
+
+in downloading the node js it will automatically download the npm package
+
+node package manager ---- playstore 
+
+----------------------- 
+
+what is react js and how it is different from the js,
+
+what is diff b/w css and bootstrap 
+
+bootstrap built by using css only ----- 
+
+
+react js is also built by using javascript
+
+advantages ----
+
+1. easy compare to js ----
+
+2. performance improvement because of spa ----
+
+3. on every change it won't update the entire dom ---
+
+
+
+
+in js --- we have the multiple web pages
+
+in react js ---- we don't have multiple web pages , we have only one page which will destroy the previous page
+
+
+if u update one component --- it will update that component only, it won't reprint the html again
+
+
+steps to install react js
+
+-----
+
+1. node js (came with npm (playstore))
+
+2. to install react js we can two options 1. create react app 2. vite js
+
+we are using vite js
+
+3. use npm create vite@latest command in the terminal
+
+4. it will ask the prj name (folder name)
+
+5. ask for framework ---- react js
+
+6. ask for variant ---- js
+
+4. after installing follow
+
+  cd your folder name  --- to change the path
+  npm install ----  it will give the node-modules folder which contains the react js folders
+  npm run dev ---- is to start the application

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>todos</h1>
+
+    <ul id="ulTag">
+
+
+
+
+
+
+
+
+    </ul>
+
+    <script>
+
+        let todos = [];
+
+        const ulTag = document.getElementById('ulTag')
+
+        async function fetchTodos() {
+
+            const sadhik = await fetch("https://dummyjson.com/todos");
+
+            const data = await sadhik.json(); // js obj
+
+
+
+            console.log(sadhik, "res")
+
+            console.log(data, 'data')
+
+            todos = data.todos
+
+            refreshHtml()
+
+            console.log(todos, "actual variable")
+
+
+        }
+
+
+        function refreshHtml() {
+
+
+            // sum = sum + 5;
+
+            // sum += 5
+
+            todos.forEach((ele, index) => {
+
+                console.log(index, 'index')
+
+                ulTag.innerHTML += `
+                <li>
+                    ${ele.id} ${ele.todo}
+
+                </li>
+                
+                `
+
+
+            })
+
+
+        }
+
+        fetchTodos()
+
+
+    </script>
+</body>
+
+</html>
